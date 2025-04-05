@@ -1,20 +1,15 @@
-
 import React, { useState } from 'react';
 import { Search, Film, Sparkles } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-
 const HeroSection = () => {
   const [searchQuery, setSearchQuery] = useState('');
-
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Searching for:', searchQuery);
     // Here you would integrate with your recommendation engine
   };
-
-  return (
-    <section className="relative py-20 px-4 md:py-32 overflow-hidden">
+  return <section className="relative py-20 px-4 md:py-32 overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-dark-blue/80 to-dark-purple/90 -z-10"></div>
       
@@ -42,20 +37,11 @@ const HeroSection = () => {
         
         <form onSubmit={handleSearch} className="flex flex-col sm:flex-row items-center gap-2 max-w-2xl mx-auto glass p-2 shadow-lg shadow-accent-purple/10 hover:shadow-accent-purple/20 transition-all duration-300">
           <div className="relative flex-1 w-full">
-            <Input
-              type="text"
-              placeholder="Enter a movie or TV show you enjoyed..."
-              className="pl-10 py-6 bg-transparent border-0 shadow-none focus-visible:ring-0 text-base"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-            />
+            <Input type="text" placeholder="Enter a movie or TV show you enjoyed..." className="pl-10 py-6 bg-transparent border-0 shadow-none focus-visible:ring-0 text-base" value={searchQuery} onChange={e => setSearchQuery(e.target.value)} />
             <Search className="absolute left-2 top-1/2 transform -translate-y-1/2 h-5 w-5 text-foreground/60" />
           </div>
-          <Button 
-            type="submit" 
-            className="w-full sm:w-auto bg-accent-purple hover:bg-accent-purple/80 text-white font-medium py-6 group transition-all duration-300"
-          >
-            <span>Find Recommendations</span>
+          <Button type="submit" className="w-full sm:w-auto bg-accent-purple hover:bg-accent-purple/80 text-white font-medium py-6 group transition-all duration-300">
+            <span> Recommendations</span>
             <Film className="ml-2 h-4 w-4 group-hover:rotate-12 transition-all" />
           </Button>
         </form>
@@ -75,8 +61,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
