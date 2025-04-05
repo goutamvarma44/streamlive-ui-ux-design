@@ -66,4 +66,51 @@
     @apply bg-gradient-to-r from-accent-gold via-accent-purple to-accent-gold bg-clip-text text-transparent animate-gradient-animation font-silkscreen;
     background-size: 200% 200%;
   }
+  
+  /* Parallax movement for background elements */
+  .parallax {
+    transition: transform 0.2s cubic-bezier(0.2, 0.49, 0.32, 0.99);
+  }
+  
+  /* Button hover animation */
+  .btn-hover-effect {
+    @apply relative overflow-hidden;
+  }
+  
+  .btn-hover-effect:after {
+    @apply absolute inset-0 w-0 bg-accent-gold transition-all duration-500 -z-10;
+    content: "";
+    transform: skewX(-15deg);
+  }
+  
+  .btn-hover-effect:hover:after {
+    @apply w-full;
+  }
 }
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-120px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-marquee {
+  animation: marquee 10s linear infinite;
+}
+

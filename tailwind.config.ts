@@ -82,13 +82,39 @@ export default {
 				'float': {
 					'0%, 100%': { transform: 'translateY(0)' },
 					'50%': { transform: 'translateY(-10px)' }
+				},
+				'pulse-glow': {
+					'0%, 100%': { 
+						opacity: '0.6',
+						boxShadow: '0 0 15px 2px rgba(155, 135, 245, 0.4)'
+					},
+					'50%': { 
+						opacity: '0.9',
+						boxShadow: '0 0 25px 5px rgba(155, 135, 245, 0.7)'
+					}
+				},
+				'shimmer': {
+					'0%': { backgroundPosition: '-200% 0' },
+					'100%': { backgroundPosition: '200% 0' }
+				},
+				'rotate-slow': {
+					'0%': { transform: 'rotate(0deg)' },
+					'100%': { transform: 'rotate(360deg)' }
+				},
+				'bounce-subtle': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-5px)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'gradient-animation': 'gradient-animation 3s ease infinite',
-				'float': 'float 3s ease-in-out infinite'
+				'float': 'float 3s ease-in-out infinite',
+				'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+				'shimmer': 'shimmer 3s linear infinite',
+				'rotate-slow': 'rotate-slow 10s linear infinite',
+				'bounce-subtle': 'bounce-subtle 2s ease-in-out infinite'
 			},
 			fontFamily: {
 				'silkscreen': ['Silkscreen', 'cursive'],
