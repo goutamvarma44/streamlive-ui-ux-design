@@ -29,10 +29,10 @@ const Header = () => {
     }`}>
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
         <div className="flex items-center">
-          <h1 className={`text-2xl lg:text-4xl logo-gradient md:text-2xl font-semibold transition-all duration-500 ${
+          <h1 className={`text-2xl lg:text-4xl md:text-2xl font-semibold transition-all duration-500 ${
             scrolled ? 'scale-90' : ''
           }`}>
-            StreamLive
+            <span className="glitter-text font-silkscreen">StreamLive</span>
           </h1>
         </div>
         
