@@ -1,38 +1,27 @@
-
 import React, { useState, useEffect } from 'react';
 import { Search, Menu, X } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
-
   useEffect(() => {
     setIsMounted(true);
-    
     const handleScroll = () => {
       const isScrolled = window.scrollY > 10;
       if (isScrolled !== scrolled) {
         setScrolled(isScrolled);
       }
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [scrolled]);
-
-  return (
-    <header className={`fixed top-0 w-full py-4 px-4 md:px-6 z-50 transition-all duration-300 ${
-      scrolled ? 'backdrop-blur-lg bg-black/40 shadow-lg' : 'bg-transparent'
-    }`}>
+  return <header className={`fixed top-0 w-full py-4 px-4 md:px-6 z-50 transition-all duration-300 ${scrolled ? 'backdrop-blur-lg bg-black/40 shadow-lg' : 'bg-transparent'}`}>
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
         <div className="flex items-center">
-          <h1 className={`text-2xl lg:text-4xl md:text-2xl font-semibold transition-all duration-500 ${
-            scrolled ? 'scale-90' : ''
-          }`}>
-            <span className="glitter-text font-silkscreen">StreamLive</span>
+          <h1 className={`text-2xl lg:text-4xl md:text-2xl font-semibold transition-all duration-500 ${scrolled ? 'scale-90' : ''}`}>
+            <span className="glitter-text font-silkscreen text-2xl font-normal">StreamLive</span>
           </h1>
         </div>
         
@@ -90,8 +79,6 @@ const Header = () => {
           </Sheet>
         </div>
       </div>
-    </header>
-  );
+    </header>;
 };
-
 export default Header;
